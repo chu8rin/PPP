@@ -52,7 +52,7 @@
             qrContainer.innerHTML = "";
 
             // 事前に決めたQRコード画像のURLを設定
-            const imageUrl = "qr-code-image.jpg"; // ここに事前に用意した画像のパスを設定
+            const imageUrl = "image/qr-code-image.jpg"; // ここに事前に用意した画像のパスを設定
 
             // 新しい img 要素を作成
             const img = document.createElement("img");
@@ -74,7 +74,7 @@
                 <h2 class="text-2xl font-bold mb-4">所有しているチケット</h2>
                 <div class="events-grid">
                     <div class="ticket-card">
-                        <img src="ticket5.png" alt="Event 5">
+                        <img src="image/ticket5.png" alt="Event 5">
                         <div class="ticket-info">
                             <p class="ticket-title">Zepp Dance Tour</p>
                             <p class="ticket-location">Zepp Namba</p>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="ticket-card" onclick="toggleDetails(this)">
-                        <img src="ticket6.png" alt="Event 6">
+                        <img src="image/ticket6.png" alt="Event 6">
                         <div class="ticket-info">
                             <p class="ticket-title">FIRST DOME TOUR「FIVE★STARS」</p>
                             <p class="ticket-location">プレミストドーム</p>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="ticket-details" style="display:none;">
                             <div class="event-header">
-                                <img src="ticket6.png" alt="Event 6" class="event-logo">
+                                <img src="image/ticket6.png" alt="Event 6" class="event-logo">
                                 <h3 class="event-title">FIRST DOME TOUR「FIVE★STARS」</h3>
                             </div>
                             <p>場所: プレミストドーム</p>
@@ -125,7 +125,7 @@
                 <h2 class="text-2xl font-bold mb-4">申込中のチケット</h2>
                 <div class="events-grid">
                     <div class="ticket-card" onclick="toggleDetails(this)">
-                        <img src="ticket2.png" alt="Event 2">
+                        <img src="image/ticket2.png" alt="Event 2">
                         <div class="ticket-info">
                             <p class="ticket-title">CHRISTMAS CONCERT 2024</p>
                             <p class="ticket-location">東京ドーム</p>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="ticket-details" style="display:none;">
                             <div class="event-header">
-                                <img src="ticket2.png" alt="Event 2" class="event-logo">
+                                <img src="image/ticket2.png" alt="Event 2" class="event-logo">
                                 <h3 class="event-title">CHRISTMAS CONCERT 2024</h3>
                             </div>
                             <p>場所: 東京ドーム</p>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="ticket-card" onclick="toggleDetails(this)">
-                        <img src="ticket4.png" alt="Event 4">
+                        <img src="image/ticket4.png" alt="Event 4">
                         <div class="ticket-info">
                             <p class="ticket-title">New Year Concert 2025</p>
                             <p class="ticket-location">京セラドーム</p>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="ticket-details" style="display:none;">
                             <div class="event-header">
-                                <img src="ticket4.png" alt="Event 4" class="event-logo">
+                                <img src="image/ticket4.png" alt="Event 4" class="event-logo">
                                 <h3 class="event-title">New Year Concert 2025</h3>
                             </div>
                             <p>第一希望: 2025.1.3 18:00公演</p>
@@ -184,7 +184,7 @@
                 <h2 class="text-2xl font-bold mb-4">NFT　Collection</h2>
                 <div class="events-grid">
                     <div class="ticket-card" onclick="toggleDetails(this)">
-                        <img src="NFT1.png" alt="NFT 1">
+                        <img src="image/NFT1.png" alt="NFT 1">
                         <div class="ticket-info">
                             <p class="ticket-title">2024 ARENA TOUR「Good Story」</p>
                             <p class="ticket-location">大阪城ホール</p>
@@ -192,7 +192,7 @@
                         </div>
                         <div class="ticket-details" style="display:none;">
                             <div class="event-header">
-                                <img src="NFT1.png" alt="NFT 1" class="event-logo">
+                                <img src="image/NFT1.png" alt="NFT 1" class="event-logo">
                                 <h3 class="event-title">2024 ARENA TOUR<br>「Good Story」</h3>
                             </div>
                             <p>アリーナA3ブロック 1列8番</p>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                     <div class="ticket-card" onclick="toggleDetails(this)">
-                        <img src="NFT2.png" alt="NFT 2">
+                        <img src="image/NFT2.png" alt="NFT 2">
                         <div class="ticket-info">
                             <p class="ticket-title">[TWINS]~20th award fes~</p>
                             <p class="ticket-location">武道館</p>
@@ -225,7 +225,7 @@
                         </div>
                         <div class="ticket-details" style="display:none;">
                             <div class="event-header">
-                                <img src="NFT2.png" alt="NFT 2" class="event-logo">
+                                <img src="image/NFT2.png" alt="NFT 2" class="event-logo">
                                 <h3 class="event-title">[TWINS]<br>~20th award fes~</h3>
                             </div>
                             <p>場所: 武道館</p>
