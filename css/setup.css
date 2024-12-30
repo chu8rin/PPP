@@ -138,9 +138,6 @@ form {
     margin: 1rem 0;
 }
 
-.terms input[type="checkbox"] {
-    margin-right: 0.1rem;
-}
 
 .terms label{
     font-weight: 300; 
