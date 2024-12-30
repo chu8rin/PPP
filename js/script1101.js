@@ -314,7 +314,7 @@
                     <option value="2025-04-19">2025年4月19日 (愛知)</option>
                     <option value="2025-05-05">2025年5月5日 (東京)</option>
                 </select>
-                <label for="ticket-quantity">枚数を選択:</label>
+                <label for="ticket-quantity" class="break-line">枚数を選択:</label>
                 <input type="number" id="ticket-quantity" name="ticket-quantity" min="1" max="4" required>
                 <button type="submit" class="submit-button">申し込む</button>
             </form>

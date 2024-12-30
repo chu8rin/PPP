@@ -266,6 +266,10 @@ header button {
 .apply-button:hover {
     background-color: #0056b3;
 }
+.break-line {
+    display: block; /* ラベルをブロック要素にすることで強制的に改行 */
+    margin-top: 1rem; /* 必要なら上にスペースを追加 */
+}
 
 /* モーダルの背景 */
 .modal-overlay {
