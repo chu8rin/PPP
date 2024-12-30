@@ -135,6 +135,7 @@ form {
 .terms {
     display: flex;
     align-items: center;
+    flex-direction: column; /* 縦並びにする */
 }
 
 
@@ -142,11 +143,6 @@ form {
     font-weight: 300; 
     font-size: 0.875rem;
     color: #666;
-}
-
-.terms input[type="checkbox"] {
-    margin: 0;
-    padding: 0;
 }
 
 
