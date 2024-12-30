@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PipPopPass-チケットを探す</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <!-- サイドバー -->
+    <div id="sidebar">
+        <nav class="p-4">
+            <a href="#" onclick="showTicket()">あなたのチケット</a>
+            <a href="#">チケットを探す</a>
+            <a href="#">売上管理</a>
+            <a href="#">買取オファー管理</a>
+            <a href="#">個人情報管理</a>
+            <a href="#" onclick="showWalletAddress();">ウォレットアドレス</a>
+            <a href="#">ヘルプページ</a>
+            <a href="#">お問い合わせ</a>
+            <a href="#">ログアウト</a>
+        </nav>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="main-content">
+        <header>
+            <button onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="title">Pip Pop Pass</h1>
+            <button id="showModalBtn">STEP3:<br>チケットを探す</button>
+            <div class="right-button">
+                <button><i class="fas fa-globe"></i> Language</button>
+                <a href="TOPpage.html">
+                    <div class="profile-icon">
+                        <img src="icon1.jpg" alt="Profile">
+                    </div>
+                </a>
+                
+            </div>
+        </header>
+
+        <!-- モーダル -->
+        <div id="myModal" class="modal2">
+            <div class="modal2-content">
+                <span class="close">&times;</span>
+                <div class="modal2-header">
+                    <i class="fas fa-search"></i> STEP3:チケットを探す
+                </div>
+                <div class="modal2-body">
+                    <p>「PipPopPass」で、チケットを申込み・購入してみましょう！</p>
+                    <ul>
+                    <li><i class="fas fa-hand-paper"></i><b>【申込み・購入】→</b></li>
+                    <p>上から5つ目のFIRST DOME TOUR「FIVE★STARS」をクリック！<br>チケットの抽選販売への申し込み、先着販売や他のユーザーによる２次販売でチケットを購入できます</p>
+                    <li><i class="fas fa-paper-plane"></i><b>【買取オファー】→</b></li>
+                    <p>上から10つ目のサンロックフェスをクリック！<br>すでに、売り切れている公演のチケットを持つユーザーに買取オファーを送信できます。NFTのおかげで、１次取引から、N次取引まで同時に行えるプラットフォームが実現。</p>
+                    </ul>
+                    <img src="nftticket.jpg" style="width: 100%; height: auto; margin-top: 20px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 検索バー -->
+        <section class="search-section">
+            <input type="text" placeholder="何をさがす？" class="search-bar">
+        </section>
+
+        <!-- イベント一覧 -->
+        <section class="events-section">
+            <h2>Ticket</h2>
+            <div class="events-grid">
+                <!-- チケットアイテム -->
+                <div class="ticket-card">
+                    <img src="ticket1.png" alt="Event 1">
+                    <div class="ticket-info">
+                        <p class="ticket-title">舞台「ちゃりんこ BOYS」</p>
+                        <p class="ticket-location">帝国劇場</p>
+                        <p class="ticket-date">2024.11.15~</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket2.png" alt="Event 2">
+                    <div class="ticket-info">
+                        <p class="ticket-title">CHRISTMAS CONCERT 2024</p>
+                        <p class="ticket-location">東京ドーム</p>
+                        <p class="ticket-date">2024.12.15</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket3.png" alt="Event 3">
+                    <div class="ticket-info">
+                        <p class="ticket-title">CHRISTMAS DINNER SHOW!</p>
+                        <p class="ticket-location">プリンスホテル</p>
+                        <p class="ticket-date">2024.12.24,25</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket4.png" alt="Event 4">
+                    <div class="ticket-info">
+                        <p class="ticket-title">New Year Concert 2025</p>
+                        <p class="ticket-location">京セラドーム</p>
+                        <p class="ticket-date">2025.1.3~</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket5.png" alt="Event 5">
+                    <div class="ticket-info">
+                        <p class="ticket-title">Zepp Dance Tour</p>
+                        <p class="ticket-location">Zepp Nagoya...</p>
+                        <p class="ticket-date">2025.2.1~</p>
+                    </div>
+                </div>
+                <div class="ticket-card" onclick="toggleDetails(this)">
+                    <img src="ticket6.png" alt="Event 6">
+                    <div class="ticket-info">
+                        <p class="ticket-title">FIRST DOME TOUR「FIVE★STARS」</p>
+                        <p class="ticket-location">PayPayドーム...</p>
+                        <p class="ticket-date">2025.2.14~</p>
+                    </div>
+                    <div class="ticket-details" style="display: none;">
+                        <div class="event-header">
+                            <img src="ticket6.png" alt="Event 6" class="event-logo">
+                            <h3 class="event-title">FIRST DOME TOUR「FIVE★STARS」</h3>
+                        </div>
+                        <div class="event-description">
+                            <p class="modal-center">
+                                <strong>チケット料金:</strong>１枚10,700円（全席指定・税込）
+                            </p>
+                            <p>
+                                *１回のお申込みで、【１公演４枚まで】の受付です。<br>
+                                *３歳以上の方は、チケットが必要です。（２歳以下のお子様は２名につき１枚のチケットが必要です。）<br>
+                                *【お申込みについての注意事項】はあらかじめご確認ください。
+                            </p>
+                        </div>
+                        <div class="event-info">
+                            <p class="modal-center"><strong>スケジュール：</strong> 2025/2/14(金)~5/5(月)<br>
+                                [福岡] PayPayドーム　2/14(金) 18:00<br>
+                                [大阪] 京セラドーム　2/22(土) 18:00<br>
+                                [北海道] プレミストドーム　3/9(日) 18:00<br>
+                                [愛知] バンテリンドーム　4/19(土) 18:00<br>
+                                [東京] 東京ドーム　5/5(月) 18:00
+                            </p>
+                        </div>
+                        <div class="event-info modal-center">
+                            <strong>お申込みの流れ</strong>
+                            <div class="ticket-steps">
+                                <div class="step">
+                                    <i class="fas fa-user-edit step-icon"></i>
+                                    <p class="step-text">お申込み</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fas fa-concierge-bell step-icon"></i>
+                                    <p class="step-text">抽選結果</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fa-solid fa-wallet step-icon"></i>
+                                    <p class="step-text">お支払い</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fa-solid fa-qrcode step-icon"></i>
+                                    <p class="step-text">チケット</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="parent-container">
+                            <button class="apply-button" onclick="openApplyModal()">申込み</button>
+                        </div>  
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket7.png" alt="Event 7">
+                    <div class="ticket-info">
+                        <p class="ticket-title">10 annyversary tour「WAKUWAKU WORLD」</p>
+                        <p class="ticket-location">真駒内アリーナ...</p>
+                        <p class="ticket-date">2025.3.1~</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket8.png" alt="Event 8">
+                    <div class="ticket-info">
+                        <p class="ticket-title">「FUN FUN FUN」ファンミーティング</p>
+                        <p class="ticket-location">インテックス大阪...</p>
+                        <p class="ticket-date">2025.3.17~</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket9.png" alt="Event 9">
+                    <div class="ticket-info">
+                        <p class="ticket-title">TALKing PARTY ～RABBIT CANDYとお話し会～</p>
+                        <p class="ticket-location">東京某所</p>
+                        <p class="ticket-date">2025.4.2</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket10.png" alt="Event 10">
+                    <div class="ticket-info">
+                        <p class="ticket-title">3rd arena tour「Precious One」</p>
+                        <p class="ticket-location">さいたまスーパーアリーナ</p>
+                        <p class="ticket-date">2025.5.1~</p>
+                    </div>
+                </div>
+                <div class="ticket-card">
+                    <img src="ticket11.png" alt="Event 11">
+                    <div class="ticket-info">
+                        <p class="ticket-title">ミュージカル「Romeo & Juliet」 </p>
+                        <p class="ticket-location">梅田芸術劇場...</p>
+                        <p class="ticket-date">2025.5.23~</p>
+                    </div>
+                </div>
+                <div class="ticket-card" onclick="toggleDetails(this)">
+                    <img src="ticket12.png" alt="Event 12">
+                    <div class="ticket-info">
+                        <p class="ticket-title">サンロックフェス</p>
+                        <p class="ticket-location">太陽公園</p>
+                        <p class="ticket-date">2025.6.8,9,10</p>
+                    </div>
+                    <div class="ticket-details" style="display: none;">
+                        <div class="event-header">
+                            <img src="ticket12.png" alt="Event 12" class="event-logo">
+                            <h3 class="event-title">サンロックフェス</h3>
+                        </div>
+                        <div class="event-description">
+                            <p class="modal-center">
+                                <strong>チケット料金:</strong>全席スタンディング（税込）<br>1DAY:8,800円<br>2DAYS:15,000円<br>3DAYS:20,000円<br>ALL DAYS:25,000円
+                            </p>
+                            <p>
+                                *１回のご購入で、【２枚まで】の受付です。<br>
+                                *未就学児童入場不可<br>
+                                *【ご購入についての注意事項】はあらかじめご確認ください。<br>
+                                *荒天中止の可能性がございます。
+                            </p>
+                        </div>
+                        <div class="event-info">
+                            <p class="modal-center"><strong>スケジュール：</strong><br>
+                                2025年6月8(日),9(月),10(火)<br>＠太陽公園 12:00 START<br>各日のタイムテーブルは後日発表！！
+                            </p>
+                        </div>
+                        <div class="event-info modal-center">
+                            <strong>先着販売</strong>
+                            <div class="ticket-steps">
+                                <div class="step">
+                                    <i class="fa-solid fa-cart-shopping step-icon"></i>
+                                    <p class="step-text">購入</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fa-solid fa-wallet step-icon"></i>
+                                    <p class="step-text">お支払い</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fa-solid fa-users step-icon"></i>
+                                    <p class="step-text">同行者へ分配</p>
+                                </div>
+                                <div class="step">
+                                    <i class="fa-solid fa-qrcode step-icon"></i>
+                                    <p class="step-text">入場</p>
+                                </div>
+                            </div>
+                            <div class="event-info modal-center">
+                                <strong>２次販売</strong>
+                                <div class="ticket-steps">
+                                    <div class="step">
+                                        <i class="fa-regular fa-paper-plane step-icon"></i>
+                                        <p class="step-text">買取オファー</p>
+                                    </div>
+                                    <div class="step">
+                                        <i class="fa-regular fa-circle-check step-icon"></i>
+                                        <p class="step-text">確定</p>
+                                    </div>
+                                    <div class="step">
+                                        <i class="fa-solid fa-wallet step-icon"></i>
+                                        <p class="step-text">お支払い</p>
+                                    </div>
+                                    <div class="step">
+                                        <i class="fa-solid fa-users step-icon"></i>
+                                        <p class="step-text">受け取り＆分配</p>
+                                    </div>
+                                    <div class="step">
+                                        <i class="fa-solid fa-qrcode step-icon"></i>
+                                        <p class="step-text">入場</p>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="button-container">
+                            <button class="buy-button">購入</button>
+                            <img src="pop_sold_out.png" alt="ソールドアウト" class="sold-out-logo">
+                            <button class="apply-button" onclick="openBuyOfferModal()">買取オファー</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="script1101.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PipPopPass-新規登録</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="setup.css"> 
+</head>
+<body>
+    <header>
+        <h1 class="title">Pip Pop Pass</h1>
+        <button id="showModalBtn">STEP1:新規登録</button>
+        <button><i class="fas fa-globe"></i> Language</button>
+    </header>
+    <!-- 新規登録ページのメインコンテナ -->
+
+    <!-- モーダル -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-user-plus"></i> STEP1：新規登録
+              </div>
+              <div class="modal-body">
+                <p>同じ情報で、もっと安心・便利なチケット管理へ！</p>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> アカウント作成時に入力する情報は、既存のチケットプラットフォームと変わらず、新しい技術でも安心して利用開始できます。</li>
+                  <li><i class="fas fa-clock"></i> 一度の登録で、その後の購入や申込み時の手間を大幅カット！</li>
+                  <li><i class="fas fa-smile-beam"></i> 安全なブロックチェーン技術で安心にチケット管理！必然的に1人1アカウントで、取引も安心。</li>
+                  <li><i class="fas fa-wallet"></i> ウォレットもアカウント作成時に簡単開設。</li>
+                </ul>
+                <p>【連携に進む】をタップすると、新規登録時のマイナンバーカード連携の方法、マイナンバーカードをどのように利用するかの説明が確認できます。</p>
+                <p>【登録】をタップすると、アカウントのトップページにつながります。ぜひ、PipPopPassの続きを体験してみてください！</p>
+              </div>
+        </div>
+    </div>
+    <div class="register-container">
+        <div class="register-card">
+            <h1 class="title">Pip Pop Pass</h1>
+            <h2 class="subtitle">新規アカウントを作成</h2>
+
+            <!-- 登録フォーム -->
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">ユーザー名</label>
+                    <input type="text" id="username" name="username" placeholder="〇△ロ" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" placeholder="xxxxx@xxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">性別</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">選択してください</option>
+                        <option value="male">男性</option>
+                        <option value="female">女性</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">生年月日</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">住所</label>
+                    <input type="text" id="address" name="address" placeholder="住所を入力" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" placeholder="09012345678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">パスワード</label>
+                    <input type="password" id="password" name="password" placeholder="パスワードを入力" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">パスワード確認</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="パスワードを再入力" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">マイナンバーカード連携</label>
+                    <button type="submit" class="submit-button" id="showImageButton">連携に進む</button>
+                </div>
+                <div id="imageModal">
+                    <img src="mynumber.jpg" alt="マイナンバー画像">
+                    <!-- 戻るボタン -->
+                    <button type="submit" class="back-button" id="closeModal">戻る</button>
+                </div>
+
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">登録にあたってPipPopPassの利用規約およびプライバシーポリシーに同意します</label>
+                </div>
+
+                <button type="submit" class="submit-button" onclick="location.href='file:///C:/Users/cinna/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/PipPopPass/TOPpage.html'">登録</button>
+            </form>
+
+            <!-- ログインページへのリンク -->
+            <p class="login-link">すでにアカウントをお持ちですか？ <a>ログイン</a></p>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("showModalBtn");
+        const span = document.getElementsByClassName("close")[0];
+        window.onload = function() {
+            modal.style.display = "block";
+            window.scrollTo(0, 0);
+        };
+        const showImageButton = document.getElementById("showImageButton");
+        const imageModal = document.getElementById("imageModal");
+        const closeModalButton = document.getElementById("closeModal");
+
+        // 「連携に進む」をクリックしたときの処理
+        showImageButton.addEventListener("click", function() {
+            imageModal.style.display = "flex"; 
+        });
+
+        closeModalButton.addEventListener("click", function() {
+            imageModal.style.display = "none"; // モーダルを非表示
+        });
+        // ボタンがクリックされたときにモーダルを表示
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 閉じるボタンがクリックされたときにモーダルを非表示にする
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // モーダル外をクリックしたときにも非表示にする
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

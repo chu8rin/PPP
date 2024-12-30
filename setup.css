@@ -1,0 +1,346 @@
+/* グローバルスタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+header {
+    background: #ffffff;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: calc(100% - 16rem);
+    top: 0;
+    z-index: 50;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between; /* スマホ対応のために変更 */
+    align-items: center;
+    gap: 1rem
+}
+.title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #ff6f91;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.03em;
+    margin: 1.0rem 0;
+    font-family: "Candal", sans-serif;
+    font-style: normal; 
+}
+header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    color: #444;
+    margin-left: auto; /* ボタンを右端に配置 */
+    display: flex;
+    gap: 0.5rem;
+}
+/* スマホ対応のスタイル */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem; /* パディングを調整 */
+        width: 100%; /* 幅を100%に設定 */
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 15px; /* タイトルのフォントサイズをさらに小さくする */
+        margin: 0; /* マージンを最小化 */
+    }
+
+    header button {
+        font-size: 0.3rem; /* ボタンのフォントサイズを小さくする */
+        padding: 0.2rem; /* ボタンのパディングを小さくする */
+        margin-left: 0; /* 右端に配置しない */
+    }
+
+    button#showModalBtn {
+        margin-bottom: 0; /* ボタン間の間隔を調整 */
+    }
+}
+
+
+/* 新規登録ページのコンテナ */
+.register-container {
+    margin-top: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.register-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* フォームのスタイル */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6f91;
+    box-shadow: 0 0 4px rgba(255, 111, 145, 0.3);
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 0.1rem;
+}
+
+.terms label{
+    font-weight: 300; 
+    font-size: 0.875rem;
+    color: #666;
+}
+
+
+/* 登録ボタンのスタイル */
+.submit-button {
+    background-color: #ff6f91;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    background-color: #f7c8d8;
+}
+.back-button {
+    background-color: #ff6f91;
+    color: white;
+    padding: 0.35rem;
+    font-size: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 0.2rem;
+}
+
+.back-button:hover {
+    background-color: #f7c8d8;
+}
+
+/* ログインページリンク */
+.login-link {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.login-link a {
+    color: #ff6f91;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+#imageModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* モーダル内の画像 */
+#imageModal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    max-height: 80%; /* 最大高さを80%に制限 */
+    overflow: hidden; /* 親要素のオーバーフローを隠す */
+    animation: slideDown 0.4s ease-out;
+  }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .modal-header {
+    font-size: 1em;
+    color: #ff66b2;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-header i {
+    font-size: 1.0em;
+    margin-right: 8px;
+    color: #f7c8d8;
+  }
+  .modal-body {
+    font-size: 0.7em;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+    overflow-y: auto; /* コンテンツ部分をスクロール可能にする */
+    max-height: calc(80vh - 100px); /* ボディ部分の最大高さを制限 */
+    padding-right: 10px; /* スクロールバーのために余白を追加 */
+  }
+  .modal-body ul {
+    list-style: none;
+    padding: 0;
+  }
+  .modal-body ul li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  .modal-body ul li i {
+    margin-right: 10px;
+    color: #9be8ed;
+  }
+
+/* 閉じるボタン */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#showModalBtn {
+    background-color: #ff66b2; /* 明るいピンク色 */
+    color: white;
+    padding: 15px 25px;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px; /* 丸い形に */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 最初は少し光を持たせる */
+    transition: all 0.3s ease; /* ホバー時のアニメーション */
+    font-family: 'Arial', sans-serif;
+
+    animation: shine 1s infinite alternate;
+
+    display: inline-block; /* ボタンをインライン要素に */
+    margin-left: 0; /* 左寄せ */
+}
+
+/* ホバー時のエフェクト */
+#showModalBtn:hover {
+    transform: scale(1.1); /* 少し大きくなる */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* ピカピカ強くなる */
+}
+
+/* ピカピカするアニメーション */
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* ピカピカ強くなる */
+        transform: scale(1.1); /* 少し大きくなる */
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 元の状態に戻る */
+        transform: scale(1);
+    }
+}
+
+
+
+
