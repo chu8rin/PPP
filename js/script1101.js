@@ -267,27 +267,34 @@
         `;
     }
 
+    // モーダルのスタックを管理
+    const modalStack = [];
+
     function showModal(detailsHtml) {
         // モーダルのHTMLを動的に作成
         const modal = document.createElement('div');
         modal.id = 'modal';
         modal.innerHTML = `
-            <div class="modal-overlay"></div>
+            <div class="modal-overlay" onclick="closeTopModal()"></div>
             <div class="modal-content">
                 <div class="modal-body">
                     ${detailsHtml}
                 </div>
                 <div class="parent-container">
-                    <button class="modal-close" onclick="closeModal()">閉じる</button>
+                    <button class="modal-close" onclick="closeTopModal()">閉じる</button>
                 </div>
             </div>
         `;
         document.body.appendChild(modal);
+
+        modalStack.push(modal);
     }
     
-    window.closeModal = function(){
-        const modal = document.getElementById("modal");
-        if (modal) modal.remove(); // モーダルを削除
+    window.closeTopModal = function(){
+        if (modalStack.length > 0) {
+            const topModal = modalStack.pop(); // スタックから最新のモーダルを取得
+            document.body.removeChild(topModal); // DOMから削除
+        }
     }
     
     window.toggleDetails = function(card) {
