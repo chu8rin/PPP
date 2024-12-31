@@ -402,12 +402,7 @@
         modal2.style.display = "none";
     }
 
-    // モーダル外をクリックしたときにも非表示にする
-    window.onclick = function(event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
+
 
     window.toggleSidebar = toggleSidebar;
     window.showQRCode = showQRCode;
