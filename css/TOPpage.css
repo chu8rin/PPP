@@ -457,6 +457,7 @@ nav .tab-button:hover {
     line-height: 1.8;
     color: #333;
     text-align: left;
+    -webkit-overflow-scrolling: touch; /* スマホでのスムーズスクロールを有効化 */
     overflow-y: auto; /* コンテンツ部分をスクロール可能にする */
     max-height: calc(80vh - 100px); /* ボディ部分の最大高さを制限 */
     padding-right: 10px; /* スクロールバーのために余白を追加 */
