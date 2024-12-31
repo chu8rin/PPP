@@ -243,10 +243,6 @@
         }
     }
     
-
-    
-    
-
     function closeWallet() {
         document.getElementById("content").innerHTML = "";
     }
@@ -276,7 +272,7 @@
         const modal = document.createElement('div');
         modal.id = 'modal';
         modal.innerHTML = `
-            <div class="modal-overlay" onclick="closeModal()"></div>
+            <div class="modal-overlay"></div>
             <div class="modal-content">
                 <div class="modal-body">
                     ${detailsHtml}
@@ -401,8 +397,6 @@
     span.onclick = function() {
         modal2.style.display = "none";
     }
-
-
 
     window.toggleSidebar = toggleSidebar;
     window.showQRCode = showQRCode;
