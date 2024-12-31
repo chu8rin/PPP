@@ -73,6 +73,9 @@ header button {
 }
 
 
+.highlight {
+    color: rgb(255, 0, 162);
+  }
 /* 新規登録ページのコンテナ */
 .register-container {
     margin-top: 40rem;
