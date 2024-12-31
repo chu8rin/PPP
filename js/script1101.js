@@ -296,6 +296,13 @@
             document.body.removeChild(topModal); // DOMから削除
         }
     }
+
+    window.closeAllModals = function(){
+        while (modalStack.length > 0) {
+            const modal = modalStack.pop();
+            document.body.removeChild(modal);
+        }
+    }
     
     window.toggleDetails = function(card) {
         const details = card.querySelector('.ticket-details').innerHTML; // 詳細情報を取得
@@ -334,7 +341,7 @@
     
             if (date && quantity) {
                 alert(`日程: ${date}\n枚数: ${quantity}枚で申し込みを受け付けました！`);
-                closeModal();
+                closeAllModals();
             } else {
                 alert('全ての項目を入力してください。');
             }
@@ -381,7 +388,7 @@
     
             if (item && itemNumber && offerPrice) {
                 alert(`${item}チケット\n${itemNumber}枚\n希望価格: ¥${offerPrice}円/枚でオファーを受け付けました！`);
-                closeModal();
+                closeAllModals();
             } else {
                 alert('全ての項目を入力してください。');
             }
