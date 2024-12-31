@@ -270,6 +270,9 @@ header button {
     display: block; /* ラベルをブロック要素にすることで強制的に改行 */
     margin-top: 1rem; /* 必要なら上にスペースを追加 */
 }
+.highlight {
+    color: rgb(255, 0, 162);
+  }
 
 /* モーダルの背景 */
 .modal-overlay {
